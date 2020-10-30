@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>SDL Force Feedback Joystick Actuator Support</title>
+</head>
+<body background="">
+<h2>SDL Force Feedback Actuator API Addition by J. Grant.</h2>
+<br>
+I implemented a native SDL module that accessed the joystick using the
+PS2Linux  ps2pad.o kernel module.&nbsp; Normally the linux kernel
+joystick API would have been used instead.&nbsp; Using the ps2pad
+kernel module allowed for force feedback actuator support; which I have
+added to the SDL Joystick API.<br>
+<br>
+I modified the SDL autoconf and automake configuration to support the
+new features I added.&nbsp; In addition to this I added two test
+programs to the test suite. testactuator.c and a testjoysticktest.c
+(based on graphical testjoystick.c).<br>
+<br>
+I implemented the API and source code in a cross platform abstract way,
+so hopefully others will add force feedback actuator support to other
+joystick modules in SDL.<br>
+<br>
+<br>
+</body>
+</html>
