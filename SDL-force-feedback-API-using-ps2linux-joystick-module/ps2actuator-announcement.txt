@@ -1,0 +1,57 @@
+[SDL] Force feedback joystick actuator patch
+
+OK, I've got it all working perfectly now.  It has been tested on
+PS2Linux and my pc a little too. (patch is attached)
+
+Included in this patch:
+2003-03-07
+ * Force feedback actuator API for SDL:
+    SDL_JoystickNumActuators();
+    SDL_JoystickSetActuator();
+    SDL_JoystickGetActuatorType();
+    SDL_JoystickGetActuatorRange();
+
+ * PS2Linux native joystick module - supporting plain digital, Analog
+   and DualShock 1/2 controllers.
+
+ * PS2Linux implementation of force feedback API.
+
+ * Other joystick modules patched with dummy functions to work with the
+   new API.
+
+ * testactuator.c created to test the actuator API and the PS2Linux
+   implementation.
+
+ * testjoysticktext.c created to test the joystick in text mode.
+
+ * testjoystick.c modifed to return info about the actuators on the device.
+
+ * testjoystick.c added extra argv[2] to select the analog stick other
+   than 0.
+
+ * testjoystick.c modified to avoid analog stick display going off the
+   edge of screen (overscan issue).
+
+ * added startup printf usage help to testjoystick, and aditional
+   programs by myself.
+
+ * configure.in and PS2Linux makefile.am patched to support the new
+   features.
+
+ * added extra generated filenames to .cvsignore (so that "diff -X
+   SDL12/.cvsignore" provides clean output).
+
+ * renamed several "Playstation 2" comments to "PS2Linux in
+   configure.in (for clarity, because I have been doing some native PS2).
+
+
+It has been great fun implementing all of this.  Now it would be great
+if more platforms were supported by this API addition.  If someone else
+with a force feedback joystick can code up another platform module this
+would be great.
+
+I am on ICQ 11122941 if anyone uses ICQ at all.
+
+Cheers
+
+JG
